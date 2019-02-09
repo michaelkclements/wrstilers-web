@@ -15,26 +15,19 @@ export default ({ data, transition }) => (
         padding: '50px',
       }}
     >
-      <form
-        name='uiadhiuadsisdai'
-        method='post'
-        action='/thanks'
-        data-netlify='true'
-        data-netlify-honeypot='bot-field'
-      >
+      <form name='adsasdsa' method='post' data-netlify='true' data-netlify-honeypot='bot-field'>
         <input type='hidden' name='bot-field' />
-
         <div className='field half first'>
           <label htmlFor='name'>Name</label>
-          <input type='text' name='name' id='name' required />
+          <input type='text' name='name' id='name' />
         </div>
         <div className='field half'>
           <label htmlFor='email'>Email</label>
-          <input type='text' name='email' id='email' required />
+          <input type='text' name='email' id='email' />
         </div>
         <div className='field'>
           <label htmlFor='message'>Message</label>
-          <textarea name='message' id='message' rows='6' required />
+          <textarea name='message' id='message' rows='6' />
         </div>
         <ul className='actions'>
           <li>

@@ -15,37 +15,29 @@ export default ({ data, transition }) => (
         padding: '50px',
       }}
     >
-      <form
-        name='contact'
-        method='post'
-        action='/thanks/'
-        data-netlify='true'
-        data-netlify-honeypot='bot-field'
-      >
-        <p hidden>
+      <form name='contact' method='POST' data-netlify='true'>
+        <p>
           <label>
-            Don’t fill this out: <input name='bot-field' />
+            Your Name: <input type='text' name='name' />
           </label>
         </p>
         <p>
           <label>
-            Your name:
-            <br />
-            <input type='text' name='name' />
+            Your Email: <input type='email' name='email' />
           </label>
         </p>
         <p>
           <label>
-            Your email:
-            <br />
-            <input type='email' name='email' />
+            Your Role:{' '}
+            <select name='role[]' multiple>
+              <option value='leader'>Leader</option>
+              <option value='follower'>Follower</option>
+            </select>
           </label>
         </p>
         <p>
           <label>
-            Message:
-            <br />
-            <textarea name='message' />
+            Message: <textarea name='message' />
           </label>
         </p>
         <p>

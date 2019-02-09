@@ -22,7 +22,7 @@ export default ({ data, transition }) => (
 
 export const thanksQuery = graphql`
   query thanksQuery {
-    thanks: contentfulPage(pageSlug: { regex: "/contact-us/" }) {
+    thanks: contentfulPage(pageSlug: { regex: "/thanks/" }) {
       pageTitle
       bannerImage {
         fluid(maxWidth: 1920, quality: 90) {

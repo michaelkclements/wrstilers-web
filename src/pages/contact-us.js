@@ -15,7 +15,13 @@ export default ({ data, transition }) => (
         padding: '50px',
       }}
     >
-      <form name='adsasdsa' method='post' data-netlify='true' data-netlify-honeypot='bot-field'>
+      <form
+        name='adsasdsa'
+        method='post'
+        action='/thanks'
+        data-netlify='true'
+        data-netlify-honeypot='bot-field'
+      >
         <input type='hidden' name='bot-field' />
         <div className='field half first'>
           <label htmlFor='name'>Name</label>

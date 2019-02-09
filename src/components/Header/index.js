@@ -159,8 +159,6 @@ export default class Header extends Component {
           {data.map((item, i) => {
             const { pageTitle, pageSlug } = item.node
 
-            console.log(item.node)
-
             const slug = pageSlug.charAt(0) === '/' ? pageSlug : `/${pageSlug}`
 
             if (i < 2) {

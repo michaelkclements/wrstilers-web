@@ -16,7 +16,7 @@ export default ({ data, transition }) => (
       }}
     >
       <form
-        name='contact'
+        name='uiadhiuadsisdai'
         method='post'
         action='/thanks'
         data-netlify='true'

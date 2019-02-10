@@ -61,7 +61,7 @@ export default ({ data, transition }) => (
 
 export const homeQuery = graphql`
   query homeQuery {
-    home: contentfulPage(pageSlug: { regex: "/ig" }) {
+    home: contentfulPage(pageTitle: { eq: "Homepage" }) {
       pageTitle
       bannerImage {
         fluid(maxWidth: 2560, quality: 90) {

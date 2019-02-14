@@ -6,17 +6,7 @@ export default ({ data, transition }) => (
   <Layout>
     <Banner fluid={data.thanks.bannerImage.fluid} title={data.thanks.pageTitle} />
 
-    <Section
-      style={{
-        backgroundColor: '#fff',
-        borderRadius: '5px',
-        boxShadow: 'rgba(0, 0, 0, 0.05) 0px 4px 15px',
-        margin: '-50px',
-        padding: '50px',
-      }}
-    >
-      THANKS
-    </Section>
+    <Section isPadded>THANKS</Section>
   </Layout>
 )
 

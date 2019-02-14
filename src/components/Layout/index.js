@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
       Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 2.25rem;
     font-weight: 700;
+    margin-top: 0;
     text-transform: uppercase;
   }
 

@@ -51,7 +51,7 @@ export default ({ data, transition }) => (
       />
     </Section>
 
-    <Section style={{ transition: 'none', zIndex: 1 }}>
+    <Section style={{ marginBottom: '-50px', transition: 'none', zIndex: 1 }}>
       <Tiles>
         {data.home.imageTiles.map((image, i) => {
           if (i > 2 && i < 6) {

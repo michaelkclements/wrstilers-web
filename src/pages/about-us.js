@@ -6,18 +6,9 @@ export default ({ data, transition }) => (
   <Layout>
     <Banner fluid={data.aboutUs.bannerImage.fluid} title={data.aboutUs.pageTitle} />
     <Section
-      style={{
-        backgroundColor: '#fff',
-        borderRadius: '5px',
-        boxShadow: 'rgba(0, 0, 0, 0.05) 0px 4px 15px',
-        margin: '-50px',
-        padding: '50px',
-      }}
-    >
-      <div
-        dangerouslySetInnerHTML={{ __html: data.aboutUs.content.childContentfulRichText.html }}
-      />
-    </Section>
+      isPadded
+      dangerouslySetInnerHTML={{ __html: data.aboutUs.content.childContentfulRichText.html }}
+    />
   </Layout>
 )
 

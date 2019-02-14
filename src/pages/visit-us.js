@@ -6,7 +6,7 @@ export default ({ data, transition }) => (
   <Layout>
     <Banner fluid={data.visitUs.bannerImage.fluid} title={data.visitUs.pageTitle} />
 
-    <Section style={{ marginTop: '-50px', transition: 'none' }}>
+    <Section style={{ marginTop: '-50px', maxWidth: '100%', transition: 'none' }}>
       <iframe
         allow='fullscreen'
         frameBorder='0'
@@ -17,11 +17,10 @@ export default ({ data, transition }) => (
         width='100%'
       />
     </Section>
-    <Section isPadded>
-      <div
-        dangerouslySetInnerHTML={{ __html: data.visitUs.content.childContentfulRichText.html }}
-      />
-    </Section>
+    <Section
+      isPadded
+      dangerouslySetInnerHTML={{ __html: data.visitUs.content.childContentfulRichText.html }}
+    />
   </Layout>
 )
 

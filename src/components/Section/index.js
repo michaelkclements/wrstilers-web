@@ -11,27 +11,10 @@ const Container = styled.div`
   opacity: ${props => (props.isVisible ? 1 : 0)};
   padding: ${props => (props.isPadded ? '100px 0' : 0)};
   position: relative;
+  text-align: center;
   transform: translateY(${props => (props.isVisible ? '0px' : '50px')});
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
-
-  .gatsby-image-outer-wrapper {
-    opacity: ${props => (props.isVisible ? 1 : 0)};
-    transform: translateY(${props => (props.isVisible ? '0px' : '50px')});
-    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-    &:nth-child(1) {
-      transition-delay: 300ms;
-    }
-
-    &:nth-child(2) {
-      transition-delay: 400ms;
-    }
-
-    &:nth-child(3) {
-      transition-delay: 500ms;
-    }
-  }
 
   p:last-child {
     margin-bottom: 0;
@@ -58,12 +41,20 @@ export default class Section extends Component {
   }
 
   render() {
-    const { backgroundColor, children, className, isPadded, style } = this.props
+    const {
+      backgroundColor,
+      children,
+      className,
+      dangerouslySetInnerHTML,
+      isPadded,
+      style,
+    } = this.props
 
     return (
       <Container
         backgroundColor={backgroundColor}
         className={className}
+        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
         ref={this.section}
         isPadded={isPadded}
         isVisible={this.state.isVisible}

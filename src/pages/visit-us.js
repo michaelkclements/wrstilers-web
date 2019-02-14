@@ -19,7 +19,7 @@ export default ({ data, transition }) => (
     </Section>
     <Section isPadded>
       <div
-        dangerouslySetInnerHTML={{ __html: data.visitUs.mainContent.childMarkdownRemark.html }}
+        dangerouslySetInnerHTML={{ __html: data.visitUs.content.childContentfulRichText.html }}
       />
     </Section>
   </Layout>
@@ -34,8 +34,8 @@ export const visitUsQuery = graphql`
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
-      mainContent {
-        childMarkdownRemark {
+      content {
+        childContentfulRichText {
           html
         }
       }

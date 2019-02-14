@@ -1,6 +1,5 @@
 export { default as Layout } from './Layout'
 export { default as Header } from './Header'
-export { default as Page } from './Page'
 export { default as Banner } from './Banner'
 export { default as Button } from './Button'
 export { default as Section } from './Section'

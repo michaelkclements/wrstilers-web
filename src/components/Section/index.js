@@ -6,6 +6,8 @@ const Container = styled.div`
   background-color: ${props => (props.backgroundColor ? props.backgroundColor : 'transparent')};
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 760px;
   opacity: ${props => (props.isVisible ? 1 : 0)};
   padding: ${props => (props.isPadded ? '100px 0' : 0)};
   position: relative;

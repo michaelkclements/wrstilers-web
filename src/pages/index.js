@@ -14,6 +14,10 @@ const Tiles = styled.div`
   }
 `
 
+const Content = styled.div`
+  text-align: center;
+`
+
 const Image = styled(Img)`
   border-radius: 3px;
   box-shadow: 0 4px 6px rgba(33, 57, 91, 0.15);
@@ -40,9 +44,9 @@ export default ({ data, transition }) => (
     </Section>
 
     <Section isPadded>
-      <div
+      <Content
         dangerouslySetInnerHTML={{
-          __html: data.home.mainContent.childMarkdownRemark.html,
+          __html: data.home.content.childContentfulRichText.html,
         }}
       />
     </Section>
@@ -68,20 +72,14 @@ export const homeQuery = graphql`
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
-      mainContent {
-        childMarkdownRemark {
+      content {
+        childContentfulRichText {
           html
         }
       }
       imageTiles {
         fixed(width: 360, height: 360, quality: 90) {
           ...GatsbyContentfulFixed_tracedSVG
-        }
-      }
-      instagramUrl
-      instagramText {
-        childMarkdownRemark {
-          html
         }
       }
     }

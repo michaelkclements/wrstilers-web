@@ -9,6 +9,7 @@ module.exports = {
     author: `@_michaelkc`,
   },
   plugins: [
+    `@contentful/gatsby-transformer-contentful-richtext`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

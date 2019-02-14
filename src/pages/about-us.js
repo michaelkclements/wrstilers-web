@@ -15,7 +15,7 @@ export default ({ data, transition }) => (
       }}
     >
       <div
-        dangerouslySetInnerHTML={{ __html: data.aboutUs.mainContent.childMarkdownRemark.html }}
+        dangerouslySetInnerHTML={{ __html: data.aboutUs.content.childContentfulRichText.html }}
       />
     </Section>
   </Layout>
@@ -30,8 +30,8 @@ export const aboutUsQuery = graphql`
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
-      mainContent {
-        childMarkdownRemark {
+      content {
+        childContentfulRichText {
           html
         }
       }

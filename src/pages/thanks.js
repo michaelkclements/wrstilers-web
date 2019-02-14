@@ -29,8 +29,8 @@ export const thanksQuery = graphql`
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
-      mainContent {
-        childMarkdownRemark {
+      content {
+        childContentfulRichText {
           html
         }
       }

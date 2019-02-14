@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    color: #6e7383;
     font-family: georgia, serif;
     margin: 0;
     padding: 0;
@@ -24,12 +25,19 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  h1 {
+    font-family: Raleway, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+      Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
   p {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
   }
 `
-
-const Container = styled.div``
 
 const Footer = styled.div`
   background-color: #efefef;
@@ -102,7 +110,7 @@ const Layout = ({ children, fluid }) => (
       }
     `}
     render={data => (
-      <Container>
+      <>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -153,7 +161,7 @@ const Layout = ({ children, fluid }) => (
             <SmallText>WRS Tilers © {date.getFullYear()} All Rights Reserved</SmallText>
           </Inner>
         </Footer>
-      </Container>
+      </>
     )}
   />
 )

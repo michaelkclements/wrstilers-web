@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Michael K. Clements <michaelkc@me.com>",
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.0.1",
     "gatsby": "^2.1.2",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-google-fonts": "^0.0.4",

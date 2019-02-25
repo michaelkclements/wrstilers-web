@@ -29,16 +29,17 @@ const Navigation = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: ${props => (props.isOpen ? '100vh' : '50vh')};
   margin: 0;
   max-width: 1160px;
   list-style: none;
-  padding: 0 20px;
-  position: absolute;
+  padding: 0 20px 50px;
+  position: ${props => (props.isOpen ? 'fixed' : 'absolute')};
   transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
 
   li {
-    margin: ${props => (props.isOpen ? '0' : 0)};
+    transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 
     &:nth-child(3) {
       order: 1;
@@ -71,6 +72,7 @@ const Navigation = styled.ul`
   @media (min-width: 769px) {
     background-color: transparent;
     flex-direction: row;
+    height: auto;
 
     li {
       animation: 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 both ${NavEnter};
@@ -112,7 +114,7 @@ const Hamburger = styled.div`
   flex-direction: column;
   justify-content: space-around;
   height: 30px;
-  position: absolute;
+  position: fixed;
   top: 55px;
   right: 30px;
   width: 30px;

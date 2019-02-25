@@ -9,7 +9,7 @@ const Container = styled.div`
   margin: 0 auto;
   max-width: 760px;
   opacity: ${props => (props.isVisible ? 1 : 0)};
-  padding: ${props => (props.isPadded ? '100px 0' : 0)};
+  padding: ${props => (props.isPadded ? '100px 50px' : 0)};
   position: relative;
   text-align: center;
   transform: translateY(${props => (props.isVisible ? '0px' : '50px')});

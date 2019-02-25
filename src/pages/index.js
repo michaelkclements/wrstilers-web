@@ -5,9 +5,11 @@ import styled from 'styled-components'
 import { Layout, Section, Banner } from '../components'
 
 const Tiles = styled.div`
-  display: none;
+  display: flex;
   flex-direction: row;
+  justify-content: space-around;
   position: relative;
+  width: 100%;
 
   @media (min-width: 737px) {
     display: flex;
@@ -21,7 +23,18 @@ const Content = styled.div`
 const Image = styled(Img)`
   border-radius: 3px;
   box-shadow: 0 4px 6px rgba(33, 57, 91, 0.15);
-  margin: 0 20px;
+  flex: 1;
+  margin: 5px;
+
+  @media (min-width: 769px) {
+    margin: 0 20px;
+  }
+
+  @media (min-width: 1025px) {
+    height: 360px;
+    flex: none;
+    width: 360px;
+  }
 `
 
 export default ({ data, transition }) => (
@@ -37,7 +50,7 @@ export default ({ data, transition }) => (
       <Tiles>
         {data.home.imageTiles.map((image, i) => {
           if (i < 3) {
-            return <Image key={i} fixed={image.fixed} />
+            return <Image key={i} fluid={image.fluid} />
           }
         })}
       </Tiles>
@@ -55,7 +68,7 @@ export default ({ data, transition }) => (
       <Tiles>
         {data.home.imageTiles.map((image, i) => {
           if (i > 2 && i < 6) {
-            return <Image key={i} fixed={image.fixed} />
+            return <Image key={i} fluid={image.fluid} />
           }
         })}
       </Tiles>
@@ -78,8 +91,8 @@ export const homeQuery = graphql`
         }
       }
       imageTiles {
-        fixed(width: 360, height: 360, quality: 90) {
-          ...GatsbyContentfulFixed_tracedSVG
+        fluid(maxWidth: 360, maxHeight: 360, quality: 90) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
     }

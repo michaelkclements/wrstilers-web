@@ -40,6 +40,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const Container = styled.div`
+  overflow: hidden;
+`
+
 const Footer = styled.div`
   background-color: #efefef;
   display: flex;
@@ -111,7 +115,7 @@ const Layout = ({ children, fluid }) => (
       }
     `}
     render={data => (
-      <>
+      <Container>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -162,7 +166,7 @@ const Layout = ({ children, fluid }) => (
             <SmallText>WRS Tilers © {date.getFullYear()} All Rights Reserved</SmallText>
           </Inner>
         </Footer>
-      </>
+      </Container>
     )}
   />
 )

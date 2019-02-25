@@ -24,7 +24,7 @@ const Container = styled.div`
   z-index: 1;
 
   @media (min-width: 1100px) {
-    height: 550px;
+    height: 70vh;
   }
 
   @media (min-width: 1450px) {

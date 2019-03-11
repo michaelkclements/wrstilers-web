@@ -48,11 +48,11 @@ export default ({ data, transition }) => (
 
     <Section style={{ marginTop: '-50px', transition: 'none', zIndex: 1 }}>
       <Tiles>
-        {data.home.imageTiles.map((image, i) => {
-          if (i < 3) {
-            return <Image key={i} fluid={image.fluid} />
-          }
-        })}
+        {data.home.imageTiles.map((image, i) => (
+          <React.Fragment key={i}>
+            {i < 3 ? <Image key={i} fluid={image.fluid} /> : null}
+          </React.Fragment>
+        ))}
       </Tiles>
     </Section>
 
@@ -66,11 +66,11 @@ export default ({ data, transition }) => (
 
     <Section style={{ marginBottom: '-50px', transition: 'none', zIndex: 1 }}>
       <Tiles>
-        {data.home.imageTiles.map((image, i) => {
-          if (i > 2 && i < 6) {
-            return <Image key={i} fluid={image.fluid} />
-          }
-        })}
+        {data.home.imageTiles.map((image, i) => (
+          <React.Fragment key={i}>
+            {i > 2 && i < 6 ? <Image fluid={image.fluid} /> : null}
+          </React.Fragment>
+        ))}
       </Tiles>
     </Section>
   </Layout>

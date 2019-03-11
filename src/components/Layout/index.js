@@ -99,6 +99,7 @@ const Layout = ({ children, fluid }) => (
             node {
               pageTitle
               pageSlug
+              pageOrder
             }
           }
         }

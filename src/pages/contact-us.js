@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout, Section, Banner } from '../components'
+import { Layout, Section, Banner, Input } from '../components'
 
 export default ({ data, transition }) => (
   <Layout>
@@ -16,12 +16,10 @@ export default ({ data, transition }) => (
       >
         <input type='hidden' name='bot-field' />
         <div className='field half first'>
-          <label htmlFor='name'>Name</label>
-          <input type='text' name='name' id='name' />
+          <Input labelText='Name' type='text' name='name' id='name' />
         </div>
         <div className='field half'>
-          <label htmlFor='email'>Email</label>
-          <input type='text' name='email' id='email' />
+          <Input labelText='Email' type='text' name='email' id='email' />
         </div>
         <div className='field'>
           <label htmlFor='message'>Message</label>

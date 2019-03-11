@@ -163,7 +163,6 @@ export default class Header extends Component {
       <Container>
         <Navigation isOpen={this.state.isOpen && this.state.isMobile}>
           {data.map((item, i) => {
-            console.log(item.node)
             const { pageTitle, pageSlug, pageOrder } = item.node
 
             if (pageOrder === null) {

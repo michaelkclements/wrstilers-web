@@ -8,7 +8,7 @@ export default ({ data, transition }) => (
 
     <Section isPadded>
       <form
-        name='adsasdsa'
+        name='contact_wrstilers'
         method='post'
         action='/thanks'
         data-netlify='true'

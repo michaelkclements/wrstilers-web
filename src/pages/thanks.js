@@ -6,7 +6,10 @@ export default ({ data, transition }) => (
   <Layout>
     <Banner fluid={data.thanks.bannerImage.fluid} title={data.thanks.pageTitle} />
 
-    <Section isPadded>THANKS</Section>
+    <Section
+      isPadded
+      dangerouslySetInnerHTML={{ __html: data.thanks.content.childContentfulRichText.html }}
+    />
   </Layout>
 )
 

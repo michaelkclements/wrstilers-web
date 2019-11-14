@@ -14,6 +14,7 @@ const Container = styled.div`
     font-weight: bold;
     height: $input-height;
     padding: 3.5rem 2rem 2rem;
+    width: 100%;
 
     &.peeky {
       padding-right: 4em;

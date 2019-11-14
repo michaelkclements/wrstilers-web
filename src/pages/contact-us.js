@@ -1,39 +1,101 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { Layout, Section, Banner, Input } from '../components'
+import React, { Component } from 'react'
+import { graphql, navigate } from 'gatsby'
+import { Layout, Section, Banner } from '../components'
 
-export default ({ data, transition }) => (
+class ContactForm extends Component {
+  constructor(props) {
+    super(props)
+    this.ContactForm = React.createRef()
+    this.state = {}
+  }
+  encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&')
+  }
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    const form = this.ContactForm.current
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: this.encode({
+        'form-name': form.getAttribute('name'),
+        ...this.state,
+      }),
+    })
+      .then(response => {
+        console.log('====================================')
+        console.log(`${JSON.stringify(response, null, 2)}`)
+        console.log('====================================')
+        navigate(form.getAttribute('action'))
+      })
+      .catch(error => {
+        console.log('====================================')
+        console.log(`error in submiting the form data:${error}`)
+        console.log('====================================')
+      })
+  }
+  render() {
+    return (
+      <form
+        name='contact'
+        method='post'
+        action='/thanks/'
+        data-netlify='true'
+        data-netlify-honeypot='bot-field'
+        onSubmit={this.handleSubmit}
+        ref={this.ContactForm}
+      >
+        <input type='hidden' name='form-name' value='contact' />
+        <p hidden>
+          <label>
+            Don’t fill this out: <input name='bot-field' onChange={this.handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your name:
+            <br />
+            <input type='text' name='name' onChange={this.handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your email:
+            <br />
+            <input type='email' name='email' onChange={this.handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message:
+            <br />
+            <textarea name='message' onChange={this.handleChange} />
+          </label>
+        </p>
+        <p>
+          <div>
+            <button type='submit'>Send</button>
+            <input type='reset' value='Eraser' />
+          </div>
+        </p>
+      </form>
+    )
+  }
+}
+
+export default ({ data }) => (
   <Layout>
     <Banner fluid={data.contactUs.bannerImage.fluid} title={data.contactUs.pageTitle} />
 
     <Section isPadded>
-      <form
-        name='contact_wrstilers'
-        method='post'
-        action='/thanks'
-        data-netlify='true'
-        data-netlify-honeypot='bot-field'
-      >
-        <input type='hidden' name='bot-field' />
-        <div className='field half first'>
-          <Input labelText='Name' type='text' name='name' id='name' />
-        </div>
-        <div className='field half'>
-          <Input labelText='Email' type='text' name='email' id='email' />
-        </div>
-        <div className='field'>
-          <label htmlFor='message'>Message</label>
-          <textarea name='message' id='message' rows='6' />
-        </div>
-        <ul className='actions'>
-          <li>
-            <input type='submit' value='Send Message' className='special' />
-          </li>
-          <li>
-            <input type='reset' value='Clear' />
-          </li>
-        </ul>
-      </form>
+      <ContactForm />
     </Section>
   </Layout>
 )

@@ -6,6 +6,7 @@ export default ({ data, transition }) => (
   <Layout>
     <Banner fluid={data.aboutUs.bannerImage.fluid} title={data.aboutUs.pageTitle} />
     <Section
+      overlaps
       isPadded
       dangerouslySetInnerHTML={{ __html: data.aboutUs.content.childContentfulRichText.html }}
     />

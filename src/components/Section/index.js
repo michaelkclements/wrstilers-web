@@ -3,11 +3,13 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   align-items: center;
-  background-color: ${props => (props.backgroundColor ? props.backgroundColor : 'transparent')};
+  background-color: ${props => (props.backgroundColor ? props.backgroundColor : '#fff')};
+  box-shadow: ${props => (props.overlaps ? '0 3px 10px rgba(0,0,0,0.05)' : null)};
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   margin-top: ${props => (props.overlaps ? '-10rem' : 0)};
+  margin-bottom: ${props => (props.overlaps ? '-2rem' : 0)};
   max-width: 760px;
   opacity: ${props => (props.isVisible ? 1 : 0)};
   padding: ${props => (props.isPadded ? '100px 50px' : 0)};
@@ -71,7 +73,7 @@ export default class Section extends Component {
 
   _onScroll() {
     const centerHeight = window.innerHeight / 1.5
-    const sectionTop = this.section.current.getBoundingClientRect().top
+    const sectionTop = this.section && this.section.current.getBoundingClientRect().top
 
     if (sectionTop <= centerHeight) {
       this.setState(prevState => ({ isVisible: true }))

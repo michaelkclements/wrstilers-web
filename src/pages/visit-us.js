@@ -18,6 +18,7 @@ export default ({ data, transition }) => (
       />
     </Section>
     <Section
+      overlaps
       isPadded
       dangerouslySetInnerHTML={{ __html: data.visitUs.content.childContentfulRichText.html }}
     />

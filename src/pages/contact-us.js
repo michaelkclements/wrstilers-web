@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { graphql, navigate } from 'gatsby'
 import styled from 'styled-components'
-import { Layout, Section, Banner, Input, Button } from '../components'
+import { Layout, Section, Banner, Input } from '../components'
 
 const TextAreaContainer = styled.div`
   position: relative;

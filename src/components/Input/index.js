@@ -213,9 +213,10 @@ export default class Input extends Component {
     }
   }
 
-  onChange = ({ target: { value } }) => {
-    this.setState({ value })
-    this.checkPattern(this.props.pattern, value)
+  onChange = e => {
+    this.setState({ value: e.target.value })
+    this.props.onChange(e)
+    this.checkPattern(this.props.pattern, e.target.value)
   }
 
   checkPattern = (pattern, value) => {

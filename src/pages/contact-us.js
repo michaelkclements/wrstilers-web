@@ -79,15 +79,11 @@ class ContactForm extends Component {
       }),
     })
       .then(response => {
-        console.log('====================================')
         console.log(`${JSON.stringify(response, null, 2)}`)
-        console.log('====================================')
         navigate(form.getAttribute('action'))
       })
       .catch(error => {
-        console.log('====================================')
         console.log(`error in submiting the form data:${error}`)
-        console.log('====================================')
       })
   }
   render() {
@@ -107,30 +103,25 @@ class ContactForm extends Component {
             Don’t fill this out: <input name='bot-field' onChange={this.handleChange} />
           </label>
         </p>
-        <p>
-          <Input
-            labelText='Your name'
-            type='text'
-            name='name'
-            id='name'
-            onChange={this.handleChange}
-          />
-        </p>
-        <p>
-          <Input
-            labelText='Your email'
-            type='email'
-            name='email'
-            id='email'
-            onChange={this.handleChange}
-          />
-        </p>
-        <p>
-          <TextAreaContainer>
-            <label htmlFor='message'>Message:</label>
-            <Textarea name='message' onChange={this.handleChange} />
-          </TextAreaContainer>
-        </p>
+        <Input
+          labelText='Your name'
+          type='text'
+          name='name'
+          id='name'
+          onChange={this.handleChange}
+        />
+
+        <Input
+          labelText='Your email'
+          type='email'
+          name='email'
+          id='email'
+          onChange={this.handleChange}
+        />
+        <TextAreaContainer>
+          <label htmlFor='message'>Message:</label>
+          <Textarea name='message' onChange={this.handleChange} />
+        </TextAreaContainer>
         <p>
           <Buttons>
             <button type='submit'>Submit</button>

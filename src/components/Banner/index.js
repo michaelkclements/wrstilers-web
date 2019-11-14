@@ -28,7 +28,7 @@ const Container = styled.div`
   }
 
   @media (min-width: 1450px) {
-    height: 90vh;
+    height: 50vh;
   }
 `
 
@@ -53,12 +53,13 @@ const Inner = styled.div`
 
 const Slogan = styled.div`
   animation: 2s cubic-bezier(0.165, 0.84, 0.44, 1) 500ms 1 both ${SloganEnter};
+  background-color: rgba(0, 0, 0, 0.1);
   border: 2px solid #fff;
   color: #fff;
   display: flex;
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   padding: 20px 0;
   position: relative;
   text-align: center;
@@ -120,6 +121,15 @@ const SloganSub = styled.h2`
   }
 `
 
+const Text = styled.div`
+  color: #fff;
+  font-family: georgia, serif;
+
+  p {
+    font-size: 2rem;
+  }
+`
+
 const StyledButton = styled.div`
   animation: 2s cubic-bezier(0.165, 0.84, 0.44, 1) 800ms 1 both ${SloganEnter};
 `
@@ -133,6 +143,7 @@ export default ({
   fluid,
   style,
   title,
+  subtitle,
 }) => (
   <Container className={className} style={style}>
     <Image fluid={fluid} fixed={fixed} />
@@ -143,9 +154,12 @@ export default ({
           <SloganSub>Award winning tilers ever since 1969</SloganSub>
         </Slogan>
       ) : (
-        <Slogan>
-          <SloganTitle>{title}</SloganTitle>
-        </Slogan>
+        <>
+          <Slogan>
+            <SloganTitle>{title}</SloganTitle>
+          </Slogan>
+          <Text dangerouslySetInnerHTML={{ __html: subtitle }} />
+        </>
       )}
       {buttonHref || buttonTitle ? (
         <StyledButton>

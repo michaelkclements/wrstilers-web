@@ -1,6 +1,55 @@
 import React, { Component } from 'react'
 import { graphql, navigate } from 'gatsby'
-import { Layout, Section, Banner } from '../components'
+import styled from 'styled-components'
+import { Layout, Section, Banner, Input, Button } from '../components'
+
+const TextAreaContainer = styled.div`
+  position: relative;
+
+  label {
+    align-items: center;
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-left: 2rem;
+    pointer-events: none;
+    position: absolute;
+    top: 1rem;
+    transition-duration: 300ms;
+    transition-property: color, font-size, font-weight, transform;
+    transition-timing-function: ease;
+  }
+`
+
+const Textarea = styled.textarea`
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 10rem;
+  padding: 4rem 2rem;
+  width: 100%;
+`
+
+const Buttons = styled.span`
+  display: flex;
+  justify-content: center;
+
+  button,
+  input {
+    background-color: #fff;
+    border: 2px solid #ffaf00;
+    color: #6e7383;
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    padding: 15px 20px;
+    position: relative;
+    text-decoration: none;
+    transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+`
 
 class ContactForm extends Component {
   constructor(props) {
@@ -59,31 +108,34 @@ class ContactForm extends Component {
           </label>
         </p>
         <p>
-          <label>
-            Your name:
-            <br />
-            <input type='text' name='name' onChange={this.handleChange} />
-          </label>
+          <Input
+            labelText='Your name'
+            type='text'
+            name='name'
+            id='name'
+            onChange={this.handleChange}
+          />
         </p>
         <p>
-          <label>
-            Your email:
-            <br />
-            <input type='email' name='email' onChange={this.handleChange} />
-          </label>
+          <Input
+            labelText='Your email'
+            type='email'
+            name='email'
+            id='email'
+            onChange={this.handleChange}
+          />
         </p>
         <p>
-          <label>
-            Message:
-            <br />
-            <textarea name='message' onChange={this.handleChange} />
-          </label>
+          <TextAreaContainer>
+            <label htmlFor='message'>Message:</label>
+            <Textarea name='message' onChange={this.handleChange} />
+          </TextAreaContainer>
         </p>
         <p>
-          <div>
-            <button type='submit'>Send</button>
-            <input type='reset' value='Eraser' />
-          </div>
+          <Buttons>
+            <button type='submit'>Submit</button>
+            <input type='reset' value='Reset' />
+          </Buttons>
         </p>
       </form>
     )
@@ -94,7 +146,7 @@ export default ({ data }) => (
   <Layout>
     <Banner fluid={data.contactUs.bannerImage.fluid} title={data.contactUs.pageTitle} />
 
-    <Section isPadded>
+    <Section overlaps isPadded>
       <ContactForm />
     </Section>
   </Layout>

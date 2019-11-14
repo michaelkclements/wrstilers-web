@@ -7,6 +7,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  margin-top: ${props => (props.overlaps ? '-10rem' : 0)};
   max-width: 760px;
   opacity: ${props => (props.isVisible ? 1 : 0)};
   padding: ${props => (props.isPadded ? '100px 50px' : 0)};
@@ -15,6 +16,7 @@ const Container = styled.div`
   transform: translateY(${props => (props.isVisible ? '0px' : '50px')});
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
+  z-index: 1;
 
   p:last-child {
     margin-bottom: 0;
@@ -47,26 +49,28 @@ export default class Section extends Component {
       className,
       dangerouslySetInnerHTML,
       isPadded,
+      overlaps,
       style,
     } = this.props
 
+    const sectionProps = {
+      backgroundColor,
+      className,
+      dangerouslySetInnerHTML,
+      isPadded,
+      overlaps,
+      style,
+    }
+
     return (
-      <Container
-        backgroundColor={backgroundColor}
-        className={className}
-        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
-        ref={this.section}
-        isPadded={isPadded}
-        isVisible={this.state.isVisible}
-        style={style}
-      >
+      <Container {...sectionProps} ref={this.section} isVisible={this.state.isVisible}>
         {children}
       </Container>
     )
   }
 
   _onScroll() {
-    const centerHeight = window.innerHeight / 1.1
+    const centerHeight = window.innerHeight / 1.5
     const sectionTop = this.section.current.getBoundingClientRect().top
 
     if (sectionTop <= centerHeight) {

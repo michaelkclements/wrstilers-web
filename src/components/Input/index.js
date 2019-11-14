@@ -28,7 +28,7 @@ const Container = styled.div`
   label {
     align-items: center;
     display: flex;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     padding-left: 2rem;
     pointer-events: none;
@@ -41,7 +41,7 @@ const Container = styled.div`
     width: 100%;
 
     &.focused {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: normal;
       transform: translateY(calc(-50% - 1.5rem));
     }

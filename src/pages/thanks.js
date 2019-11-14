@@ -2,13 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Layout, Section, Banner } from '../components'
 
-export default ({ data, transition }) => (
+export default ({ data }) => (
   <Layout>
-    <Banner fluid={data.thanks.bannerImage.fluid} title={data.thanks.pageTitle} />
-
-    <Section
-      isPadded
-      dangerouslySetInnerHTML={{ __html: data.thanks.content.childContentfulRichText.html }}
+    <Banner
+      fluid={data.thanks.bannerImage.fluid}
+      title={data.thanks.pageTitle}
+      subtitle={data.thanks.content.childContentfulRichText.html}
     />
   </Layout>
 )

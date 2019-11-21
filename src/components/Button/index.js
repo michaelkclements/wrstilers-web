@@ -9,6 +9,7 @@ const BtnHref = styled.a`
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
+  min-width: 220px;
   padding: 15px 20px;
   position: relative;
   text-decoration: none;
@@ -26,6 +27,7 @@ const BtnLink = styled(Link)`
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
+  min-width: 220px;
   padding: 15px 20px;
   position: relative;
   text-decoration: none;
@@ -66,7 +68,7 @@ const Prefix = styled.span`
   }
 `
 
-export default ({ children, className, color, href, prefix, title, to }) =>
+export default ({ className, color, href, prefix, title, to }) =>
   href ? (
     <BtnHref
       color={color}

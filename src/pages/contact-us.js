@@ -40,6 +40,7 @@ const Buttons = styled.span`
     background-color: #fff;
     border: 2px solid #ffaf00;
     color: #6e7383;
+    cursor: pointer;
     display: inline-block;
     font-family: 'Raleway', sans-serif;
     font-size: 1.6rem;
@@ -48,6 +49,11 @@ const Buttons = styled.span`
     position: relative;
     text-decoration: none;
     transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+      background-color: rgba(255, 175, 0, 0.1);
+      backdrop-filter: blur(3px);
+    }
   }
 `
 

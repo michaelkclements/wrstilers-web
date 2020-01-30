@@ -72,10 +72,9 @@ export default class Section extends Component {
   }
 
   _onScroll() {
-    const centerHeight = window.innerHeight / 1.5
     const sectionTop = this.section && this.section.current.getBoundingClientRect().top
 
-    if (sectionTop <= centerHeight) {
+    if (sectionTop <= window.innerHeight) {
       this.setState(prevState => ({ isVisible: true }))
     }
   }

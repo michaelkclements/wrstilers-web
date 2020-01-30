@@ -28,7 +28,7 @@ const Container = styled.div`
   }
 
   @media (min-width: 1450px) {
-    height: 50vh;
+    height: 60vh;
   }
 `
 

@@ -7,6 +7,7 @@ const SocialIcons = () => (
       aria-label='Go to WR Tilers & Sons Facebook page'
       title='Go to WR Tilers & Sons Facebook page'
       target='_blank'
+      rel='noopener noreferrer'
     >
       <svg width='1024px' height='1024px' viewBox='0 0 1024 1024'>
         <g id='fb' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
@@ -23,6 +24,7 @@ const SocialIcons = () => (
       aria-label='Go to WR Tilers & Sons Facebook page'
       title='Go to WR Tilers & Sons Facebook page'
       target='_blank'
+      rel='noopener noreferrer'
     >
       <svg width='1024px' height='1024px' viewBox='0 0 1024 1024'>
         <g id='ig' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>

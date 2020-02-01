@@ -29,7 +29,8 @@ const Navigation = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: ${props => (props.isOpen ? '100vh' : '50vh')};
+  height: 100vh;
+  height: -webkit-fill-available;
   margin: 0;
   max-width: 1160px;
   list-style: none;

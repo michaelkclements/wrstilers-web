@@ -37,6 +37,7 @@ const Buttons = styled.span`
 
   button,
   input {
+    -webkit-appearance: none;
     background-color: #fff;
     border: 2px solid #ffaf00;
     color: #6e7383;

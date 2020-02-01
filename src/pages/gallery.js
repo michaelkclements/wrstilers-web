@@ -18,8 +18,8 @@ const Image = styled(Img)`
   width: calc(50% - 20px);
 `
 
-export default ({ data, transition }) => (
-  <Layout>
+export default ({ data, location }) => (
+  <Layout location={location.origin}>
     <Banner fluid={data.gallery.bannerImage.fluid} title={data.gallery.pageTitle} />
     <Section overlaps style={{ maxWidth: `1000px` }}>
       <Images>

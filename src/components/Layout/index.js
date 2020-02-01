@@ -124,7 +124,7 @@ const StyledButton = styled.button`
 
 const date = new Date()
 
-const Layout = ({ children, fluid }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -170,7 +170,9 @@ const Layout = ({ children, fluid }) => (
           />
           <meta
             property='og:image'
-            content={`https://www.wrstilers.co.uk${data.ogImage.original.src}`}
+            content={`${location ? location : 'https://www.wrstilers.co.uk'}${
+              data.ogImage.original.src
+            }`}
           />
           <meta property='og:title' content='W Rodgerson & Sons' />
           <meta
@@ -182,7 +184,9 @@ const Layout = ({ children, fluid }) => (
           <meta name='twitter:creator' content='@wrstilers' />
           <meta
             name='twitter:image'
-            content={`https://www.wrstilers.co.uk${data.ogImage.original.src}`}
+            content={`${location ? location : 'https://www.wrstilers.co.uk'}${
+              data.ogImage.original.src
+            }`}
           />
           <html lang='en' />
         </Helmet>

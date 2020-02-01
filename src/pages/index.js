@@ -37,8 +37,8 @@ const Image = styled(Img)`
   }
 `
 
-export default ({ data, transition }) => (
-  <Layout>
+export default ({ data, location }) => (
+  <Layout location={location.origin}>
     <Banner
       buttonHref='tel:01912375763'
       buttonPrefix='Call us'

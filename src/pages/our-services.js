@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Layout, Section, Banner } from '../components'
 
-export default ({ data, transition }) => (
-  <Layout>
+export default ({ data, location }) => (
+  <Layout location={location.origin}>
     <Banner fluid={data.services.bannerImage.fluid} title={data.services.pageTitle} />
 
     <Section

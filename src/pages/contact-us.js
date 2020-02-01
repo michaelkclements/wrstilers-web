@@ -140,8 +140,8 @@ class ContactForm extends Component {
   }
 }
 
-export default ({ data }) => (
-  <Layout>
+export default ({ data, location }) => (
+  <Layout location={location.origin}>
     <Banner fluid={data.contactUs.bannerImage.fluid} title={data.contactUs.pageTitle} />
 
     <Section overlaps isPadded>

@@ -19,7 +19,7 @@ const Container = styled.div`
   flex-direction: column;
   flex: 1;
   position: relative;
-  z-index: 2;
+  z-index: 99;
 `
 
 const Navigation = styled.ul`
@@ -28,7 +28,7 @@ const Navigation = styled.ul`
   backdrop-filter: ${props => (props.isOpen ? 'blur(3px)' : 'blur(0)')};
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   height: ${props => (props.isOpen ? '100vh' : '50vh')};
   margin: 0;
   max-width: 1160px;
@@ -100,12 +100,16 @@ const NavLink = styled(Link)`
   display: flex;
   font-size: 17px;
   letter-spacing: 2px;
-  padding: 40px 0;
+  padding: 0;
   text-decoration: none;
   text-transform: uppercase;
 
   svg {
     fill: #fff;
+  }
+
+  @media (min-width: 769px) {
+    padding: 40px 0;
   }
 `
 

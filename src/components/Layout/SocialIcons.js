@@ -10,7 +10,7 @@ const SocialIcons = () => (
       rel='noopener noreferrer'
     >
       <svg width='1024px' height='1024px' viewBox='0 0 1024 1024'>
-        <g id='fb' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+        <g id='fb' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
           <path
             d='M1024,512 C1024,229.23 794.77,0 512,0 C229.23,0 0,229.23 0,512 C0,767.554 187.231,979.37 432,1017.78 L432,660 L302,660 L302,512 L432,512 L432,399.2 C432,270.88 508.438,200 625.39,200 C681.407,200 740,210 740,210 L740,336 L675.438,336 C611.835,336 592,375.467 592,415.957 L592,512 L734,512 L711.3,660 L592,660 L592,1017.78 C836.769,979.37 1024,767.554 1024,512'
             id='Fill-1'
@@ -27,7 +27,7 @@ const SocialIcons = () => (
       rel='noopener noreferrer'
     >
       <svg width='1024px' height='1024px' viewBox='0 0 1024 1024'>
-        <g id='ig' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+        <g id='ig' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
           <image
             id='IG_Glyph_Fill'
             x='0'

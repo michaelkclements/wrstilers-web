@@ -152,38 +152,38 @@ const Layout = ({ children, fluid }) => (
             }
           }
         }
+        ogImage: imageSharp(original: { src: { regex: "/og/" } }) {
+          original {
+            src
+          }
+        }
       }
     `}
     render={data => (
       <Container>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            {
-              name: 'description',
-              content: 'North East Ceramic Wall & Floor Tiling Specialists',
-            },
-            {
-              name: 'keywords',
-              content: 'tiling, tiles, tilers, northeast, north east, award, safemark, tta, fmb',
-            },
-            // { property: 'og:image', content: OgImage },
-            { property: 'og:image:width', content: '1200' },
-            { property: 'og:image:height', content: '630' },
-            {
-              property: 'og:title',
-              content: 'W Rodgerson & Sons - North East Ceramic Wall & Floor Tiling Specialists',
-            },
-            {
-              property: 'og:description',
-              content: 'North East Ceramic Wall & Floor Tiling Specialists',
-            },
-            { property: 'og:url', content: 'https://www.wrstilers.co.uk' },
-            { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:site', content: 'https://www.wrstilers.co.uk' },
-            { name: 'twitter:creator', content: '@wrstilers' },
-          ]}
-        >
+        <Helmet>
+          <title>{data.site.siteMetadata.title}</title>
+          <meta name='description' content='North East Ceramic Wall & Floor Tiling Specialists' />
+          <meta
+            name='keywords'
+            content='wrstilers, tiling, tiles, tilers, northeast, north east, award, safemark, tta, fmb'
+          />
+          <meta
+            property='og:image'
+            content={`https://www.wrstilers.co.uk${data.ogImage.original.src}`}
+          />
+          <meta property='og:title' content='W Rodgerson & Sons' />
+          <meta
+            property='og:description'
+            content='North East Ceramic Wall & Floor Tiling Specialists'
+          />
+          <meta property='og:url' content='https://www.wrstilers.co.uk' />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:creator' content='@wrstilers' />
+          <meta
+            name='twitter:image'
+            content={`https://www.wrstilers.co.uk${data.ogImage.original.src}`}
+          />
           <html lang='en' />
         </Helmet>
         <GlobalStyle />

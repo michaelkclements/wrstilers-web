@@ -29,8 +29,8 @@ const Navigation = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
-  height: -webkit-fill-available;
+  height: ${props => (props.isOpen ? '100vh' : '70vh')};
+  height: ${props => (props.isOpen ? '-webkit-fill-available' : '70vh')};
   margin: 0;
   max-width: 1160px;
   list-style: none;
@@ -119,6 +119,7 @@ const Hamburger = styled.div`
   flex-direction: column;
   justify-content: space-around;
   height: 30px;
+  mix-blend-mode: plus-lighter;
   position: fixed;
   top: 55px;
   right: 30px;
@@ -126,7 +127,7 @@ const Hamburger = styled.div`
 
   &::before,
   &::after {
-    background-color: #fff;
+    background-color: #bbb;
     content: '';
     height: 3px;
     transform-origin: center center;

@@ -168,7 +168,7 @@ const Layout = ({ children, fluid }) => (
             name='keywords'
             content='wrstilers, tiling, tiles, tilers, northeast, north east, award, safemark, tta, fmb'
           />
-          <meta property='og:image' content={data.ogImage.original.src} />
+          <meta property='og:image' content={`${__dirname}/${data.ogImage.original.src}`} />
           <meta property='og:title' content='W Rodgerson & Sons' />
           <meta
             property='og:description'
@@ -177,7 +177,7 @@ const Layout = ({ children, fluid }) => (
           <meta property='og:url' content='https://www.wrstilers.co.uk' />
           <meta name='twitter:card' content='summary_large_image' />
           <meta name='twitter:creator' content='@wrstilers' />
-          <meta name='twitter:image' content={data.ogImage.original.src} />
+          <meta name='twitter:image' content={`${__dirname}/${data.ogImage.original.src}`} />
           <html lang='en' />
         </Helmet>
         <GlobalStyle />

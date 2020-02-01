@@ -171,7 +171,7 @@ const Layout = ({ children, fluid }) => (
           />
           <meta
             property='og:image'
-            content={`${window.location.origin}${data.ogImage.original.src}`}
+            content={`${win.location.origin}${data.ogImage.original.src}`}
           />
           <meta property='og:title' content='W Rodgerson & Sons' />
           <meta

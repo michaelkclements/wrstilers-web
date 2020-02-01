@@ -152,6 +152,11 @@ const Layout = ({ children, fluid }) => (
             }
           }
         }
+        ogImage: imageSharp(original: { src: { regex: "/og/" } }) {
+          original {
+            src
+          }
+        }
       }
     `}
     render={data => (
@@ -167,7 +172,7 @@ const Layout = ({ children, fluid }) => (
               name: 'keywords',
               content: 'tiling, tiles, tilers, northeast, north east, award, safemark, tta, fmb',
             },
-            // { property: 'og:image', content: OgImage },
+            { property: 'og:image', content: data.ogImage.original.src },
             { property: 'og:image:width', content: '1200' },
             { property: 'og:image:height', content: '630' },
             {

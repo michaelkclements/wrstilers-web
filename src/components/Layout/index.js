@@ -123,6 +123,7 @@ const StyledButton = styled.button`
 `
 
 const date = new Date()
+let win = typeof window !== 'undefined' ? window : false
 
 const Layout = ({ children, fluid }) => (
   <StaticQuery
@@ -182,7 +183,7 @@ const Layout = ({ children, fluid }) => (
           <meta name='twitter:creator' content='@wrstilers' />
           <meta
             name='twitter:image'
-            content={`${window.location.origin}${data.ogImage.original.src}`}
+            content={`${win.location.origin}${data.ogImage.original.src}`}
           />
           <html lang='en' />
         </Helmet>

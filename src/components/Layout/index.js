@@ -175,8 +175,9 @@ const Layout = ({ children, fluid }) => (
             content='North East Ceramic Wall & Floor Tiling Specialists'
           />
           <meta property='og:url' content='https://www.wrstilers.co.uk' />
-          <meta name='twitter:card' content='summary' />
+          <meta name='twitter:card' content='summary_large_image' />
           <meta name='twitter:creator' content='@wrstilers' />
+          <meta name='twitter:image' content={data.ogImage.original.src} />
           <html lang='en' />
         </Helmet>
         <GlobalStyle />

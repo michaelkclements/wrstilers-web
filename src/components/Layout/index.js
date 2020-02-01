@@ -123,7 +123,6 @@ const StyledButton = styled.button`
 `
 
 const date = new Date()
-let origin = typeof window !== 'undefined' ? window.location.origin : false
 
 const Layout = ({ children, fluid }) => (
   <StaticQuery
@@ -169,7 +168,10 @@ const Layout = ({ children, fluid }) => (
             name='keywords'
             content='wrstilers, tiling, tiles, tilers, northeast, north east, award, safemark, tta, fmb'
           />
-          <meta property='og:image' content={`${origin}${data.ogImage.original.src}`} />
+          <meta
+            property='og:image'
+            content={`https://www.wrstilers.co.uk${data.ogImage.original.src}`}
+          />
           <meta property='og:title' content='W Rodgerson & Sons' />
           <meta
             property='og:description'
@@ -178,7 +180,10 @@ const Layout = ({ children, fluid }) => (
           <meta property='og:url' content='https://www.wrstilers.co.uk' />
           <meta name='twitter:card' content='summary_large_image' />
           <meta name='twitter:creator' content='@wrstilers' />
-          <meta name='twitter:image' content={`${origin}${data.ogImage.original.src}`} />
+          <meta
+            name='twitter:image'
+            content={`https://www.wrstilers.co.uk${data.ogImage.original.src}`}
+          />
           <html lang='en' />
         </Helmet>
         <GlobalStyle />

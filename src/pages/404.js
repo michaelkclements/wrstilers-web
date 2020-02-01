@@ -23,7 +23,7 @@ export const fourOhFour = graphql`
     fourOhFour: contentfulPage(pageTitle: { regex: "/Homepage/" }) {
       bannerImage {
         fluid(maxWidth: 2560, quality: 90) {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
     }

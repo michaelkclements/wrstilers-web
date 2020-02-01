@@ -19,7 +19,7 @@ export const aboutUsQuery = graphql`
       pageTitle
       bannerImage {
         fluid(maxWidth: 1920, quality: 90) {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
       content {

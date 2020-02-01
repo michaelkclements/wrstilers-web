@@ -88,7 +88,7 @@ export const homeQuery = graphql`
       pageTitle
       bannerImage {
         fluid(maxWidth: 2560, quality: 90) {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
       content {
@@ -98,7 +98,7 @@ export const homeQuery = graphql`
       }
       imageTiles {
         fluid(maxWidth: 360, maxHeight: 360, quality: 90) {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
     }

@@ -46,7 +46,10 @@ export default ({ data, transition }) => (
       fluid={data.home.bannerImage.fluid}
     />
 
-    <Section style={{ marginTop: '-50px', transitionDelay: '500ms', zIndex: 1 }}>
+    <Section
+      backgroundColor='none'
+      style={{ marginTop: '-50px', transitionDelay: '500ms', zIndex: 2 }}
+    >
       <Tiles>
         {data.home.imageTiles.map((image, i) => (
           <React.Fragment key={i}>
@@ -64,7 +67,10 @@ export default ({ data, transition }) => (
       />
     </Section>
 
-    <Section style={{ marginBottom: '-50px', transitionDelay: '500ms', zIndex: 1 }}>
+    <Section
+      backgroundColor='none'
+      style={{ marginBottom: '-50px', transitionDelay: '500ms', zIndex: 1 }}
+    >
       <Tiles>
         {data.home.imageTiles.map((image, i) => (
           <React.Fragment key={i}>

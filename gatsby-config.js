@@ -14,6 +14,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Raleway\:100,700,800,900`],
+        display: 'swap',
       },
     },
     `gatsby-plugin-react-helmet`,

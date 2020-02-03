@@ -76,6 +76,7 @@ const Navigation = styled.ul`
     background-color: transparent;
     flex-direction: row;
     height: auto;
+    pointer-events: all;
 
     li {
       animation: 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 both ${NavEnter};

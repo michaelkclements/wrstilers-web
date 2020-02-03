@@ -35,6 +35,7 @@ const Navigation = styled.ul`
   max-width: 1160px;
   list-style: none;
   padding: 0 20px 50px;
+  pointer-events: ${props => (props.isOpen ? 'all' : 'none')};
   position: ${props => (props.isOpen ? 'fixed' : 'absolute')};
   transition: background-color 300ms cubic-bezier(0.165, 0.84, 0.44, 1),
     backdrop-filter 300ms cubic-bezier(0.165, 0.84, 0.44, 1);

@@ -35,17 +35,19 @@ const Navigation = styled.ul`
   max-width: 1160px;
   list-style: none;
   padding: 0 20px 50px;
-  pointer-events: ${props => (props.isOpen ? 'all' : 'none')};
   position: ${props => (props.isOpen ? 'fixed' : 'absolute')};
   transition: background-color 300ms cubic-bezier(0.165, 0.84, 0.44, 1),
     backdrop-filter 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
 
   li {
+    pointer-events: ${props => (props.isOpen ? 'all' : 'none')};
     transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 
+    /* Logo */
     &:nth-child(3) {
       order: 1;
+      pointer-events: all;
     }
 
     &:nth-child(1) {
@@ -76,10 +78,10 @@ const Navigation = styled.ul`
     background-color: transparent;
     flex-direction: row;
     height: auto;
-    pointer-events: all;
 
     li {
       animation: 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 both ${NavEnter};
+      pointer-events: all;
 
       &:nth-child(3) {
         animation-delay: 500ms;

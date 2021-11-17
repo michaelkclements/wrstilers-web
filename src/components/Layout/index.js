@@ -59,6 +59,10 @@ const Inner = styled.div`
   max-width: 760px;
   padding: 150px 0 100px;
   width: 100%;
+
+  > a {
+    margin-bottom: 2rem;
+  }
 `
 
 const Logos = styled.div`
@@ -91,7 +95,7 @@ const StyledButton = styled.button`
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
-  margin: 30px;
+  margin: 0 30px 30px;
   min-width: 220px;
   padding: 15px 20px;
   position: relative;
@@ -192,6 +196,12 @@ const Layout = ({ children, fluid }) => (
         <Footer>
           <Inner>
             <Button color='#6E7383' href='tel:01912375763' prefix='Call us' title='0191 237 5763' />
+            <Button
+              color='#6E7383'
+              href='mailto:info@wrstilers.co.uk'
+              prefix='Email us'
+              title='info@wrstilers.co.uk'
+            />
 
             <StyledButton color='#6E7383' prefix='Follow us'>
               <SocialIcons />

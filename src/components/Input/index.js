@@ -121,6 +121,7 @@ export default class Input extends Component {
 
   render() {
     const {
+      alwaysFocus,
       className,
       disabled,
       id,
@@ -160,7 +161,7 @@ export default class Input extends Component {
           aria-label={placeholder}
           onBlur={this.onBlur}
           onChange={this.onChange}
-          onFocus={this.onFocus}
+          onFocus={alwaysFocus ? this.state.focused = true : this.onFocus}
           type={this.state.type}
           value={this.state.value}
           {...inputAttr}

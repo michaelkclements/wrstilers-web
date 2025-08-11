@@ -2,7 +2,7 @@
   "name": "wrstilers-web",
   "private": true,
   "description": "W Rodgerson & Sons - website",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "author": "Michael K. Clements <michaelkc@me.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",

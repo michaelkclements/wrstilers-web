@@ -7,9 +7,9 @@ import { Layout, Section, Banner } from '../components'
 const Tiles = styled.div`
   display: flex;
   flex-direction: row;
+  justify-self: center;
   justify-content: space-around;
   position: relative;
-  width: 100%;
 
   @media (min-width: 737px) {
     display: flex;

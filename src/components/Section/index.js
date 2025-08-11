@@ -7,7 +7,7 @@ const Container = styled.div`
   box-shadow: ${props => (props.overlaps ? '0 3px 10px rgba(0,0,0,0.05)' : null)};
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  justify-self: center;
   margin-top: ${props => (props.overlaps ? '-10rem' : 0)};
   margin-bottom: ${props => (props.overlaps ? '-2rem' : 0)};
   max-width: 760px;

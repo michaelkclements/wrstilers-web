@@ -109,6 +109,7 @@ const NavLink = styled(Link)`
   padding: 0;
   text-decoration: none;
   text-transform: uppercase;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 
   svg {
     fill: #fff;

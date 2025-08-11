@@ -30,6 +30,17 @@ const Container = styled.div`
   @media (min-width: 1450px) {
     height: 60vh;
   }
+
+  &::before {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    content: '';
+    height: 300px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
 `
 
 const Image = styled(Img)`
@@ -75,6 +86,7 @@ const SloganTitle = styled.h1`
   line-height: 30px;
   margin: 0;
   text-transform: uppercase;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 
   @media (min-width: 737px) {
     font-size: 50px;
@@ -89,6 +101,7 @@ const SloganSub = styled.h2`
   font-weight: 100;
   margin: 0;
   position: absolute;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   top: calc(100% - 10px);
   width: 100%;
 
@@ -132,6 +145,7 @@ const Text = styled.div`
 
 const StyledButton = styled.div`
   animation: 2s cubic-bezier(0.165, 0.84, 0.44, 1) 800ms 1 both ${SloganEnter};
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 `
 
 export default ({
